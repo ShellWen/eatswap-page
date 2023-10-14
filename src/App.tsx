@@ -13,7 +13,6 @@ function App() {
     damping: 20,
   }) as MotionValue<number>
   const topPlaceholder = useTransform(smoothProgress, [0, 1], ['50vh', '0vh'])
-  const minHeight = useTransform(smoothProgress, [0, 1], ['40vh', '100vh'])
   const bioTranslateX = useTransform(smoothProgress, [0, 1], ['0vw', '-100vw'])
   const contentOpacity = useTransform(smoothProgress, [0.3, 1], [0, 1])
   return (
@@ -22,12 +21,7 @@ function App() {
         <motion.div style={{
           height: topPlaceholder,
         }} />
-        <motion.div
-          className="bg-secondary-600 text-primary-200"
-          style={{
-            minHeight,
-          }}
-        >
+        <motion.div className="bg-secondary-600 text-primary-200">
           <div className="mx-8 md:mx-16 lg:mx-24 my-8 py-4">
             <div className="pt-4 md:pb-6 sticky top-0 bg-secondary-600 z-10">
               <span className="block text-6xl font-extrabold md:inline md:text-8xl">交换龙</span>
